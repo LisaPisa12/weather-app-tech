@@ -1,13 +1,21 @@
 import Home from "./components/Home/Home";
-import { Switch, Route } from "react-router-dom";
-import Forecast from "./components/Forecast/Forecast";
-import "./globalStyles";
+import { useEffect, useState } from "react";
+import api from "./api/apiservice";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import WeatherTile from "./components/WeatherTile/WeatherTile";
+
+import dotenv from "dotenv";
+import "./globalStyles.css";
+dotenv.config();
+
 const App = () => {
   return (
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/forecast" component={Forecast} />
-    </Switch>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route component={WeatherTile} path="/forecast" />
+      </Switch>
+    </Router>
   );
 };
 
