@@ -24,20 +24,27 @@ const Home = () => {
   };
 
   useEffect(() => {
-    api.fetchWeather(userInput.city);
+    if (userInput.city === "") return;
+    else {
+      api.fetchWeather(userInput.city);
+    }
   }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    api.fetchWeather(userInput.city).then((response) =>
-      setResponse(
-        response.list,
-        history.push("/forecast", {
-          response: response,
-          userInput: userInput,
-        })
-      )
-    );
+    try {
+      api.fetchWeather(userInput.city).then((response) =>
+        setResponse(
+          response.list,
+          history.push("/forecast", {
+            response: response,
+            userInput: userInput,
+          })
+        )
+      );
+    } catch (error) {
+      alert("Please checked that you've inputed all the values");
+    }
 
     // .then(history.push("/forecast", { response: response }));
     // .then((response) => setResponse(response))
@@ -51,14 +58,16 @@ const Home = () => {
     <>
       <div>
         <form onSubmit={handleSubmit}>
-          <h1>Welcome</h1>
-          <h3>Get the weather where you live</h3>
+          <h1 className="welcome_div">Welcome</h1>
+          <h3 className="welcome_header">Get the weather where you live</h3>
+
           <input
-            placeholder="Your name"
             name="name"
+            placeholder="Your name"
             type="text"
             onChange={handleOnChange}
           />
+
           <input
             placeholder="Your city"
             name="city"

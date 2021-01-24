@@ -13,14 +13,17 @@ form {
   justify-content: center;
 }
 
-h1 {
-  font-weight: 500;
+.welcome_div {
+  font-weight: 700;
   color: black;
+  font-size: 60px;
 }
 
-h3 {
+.welcome_header {
   font-weight: 300;
   color: black;
+  margin-bottom: 40px;
+  font-size: 150%;
 }
 
 input {
