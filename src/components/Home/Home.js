@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import api from "../../api/apiservice";
-import { useHistory, Route } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import "./HomeElements.css";
 
@@ -11,7 +11,6 @@ const Home = () => {
   });
   const [response, setResponse] = useState({});
   const history = useHistory();
-  const [loading, setLoading] = useState(true);
 
   const handleOnChange = (event) => {
     const name = event.target.name;

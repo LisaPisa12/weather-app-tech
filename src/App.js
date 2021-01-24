@@ -1,6 +1,4 @@
 import Home from "./components/Home/Home";
-import { useEffect, useState } from "react";
-import api from "./api/apiservice";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WeatherTile from "./components/WeatherTile/WeatherTile";
 

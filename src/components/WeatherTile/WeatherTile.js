@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import dayjs from "dayjs";
 import "./WeatherTileElements.css";
 
@@ -20,7 +20,6 @@ const WeatherTile = (props) => {
 
   const getColor = () => {
     let length = colors.length;
-
     let randomNum = Math.floor(Math.random() * length);
     let color = colors[randomNum];
     colors.splice(randomNum, 1);
@@ -52,26 +51,6 @@ const WeatherTile = (props) => {
           })}
         </div>
       </div>
-      {/* <div className="header_div">
-        <h1>Hi, {name}</h1>
-        <h3>Weather forecast: {city} name for the next five days</h3>
-      </div>
-      <div className="tile_container">
-        {forecast.map((day) => {
-          return (
-            <div className="temp_holder">
-              <div className="top_half">
-                <h1>{`${Math.ceil(day.main.temp)}°F`}</h1>
-              </div>
-
-              <div className="bottom_half">
-                <h3>{dayjs(day.dt.toString()).format("dddd").toUpperCase()}</h3>
-                <p>{dayjs(day.dt.toString()).format("MMMM DD YYYY")}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div> */}
     </>
   );
 };
