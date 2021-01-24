@@ -32,4 +32,4 @@ npm install
 
 ## Or check the live demo version
 
-You can check the demo here: [Demo] (https://weather-app-tech.vercel.app/)
+You can check the demo here: [Demo](https://weather-app-tech.vercel.app/)
