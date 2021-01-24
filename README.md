@@ -29,3 +29,7 @@ npm install
 ```
 'npm start'
 ```
+
+## Or check the live demo version
+
+You can check the demo here: [Demo] (https://weather-app-tech.vercel.app/)
